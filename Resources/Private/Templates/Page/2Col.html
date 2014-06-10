@@ -1,0 +1,101 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+
+<f:comment> <!--
+#
+# Rootsystem SVN
+#
+# @version $Revision: 160 $
+# @lastrevision $Date: 2013-08-01 19:18:15 +0200 (Do, 01 Aug 2013) $
+# @modifiedby $LastChangedBy: erwin $
+# @lastmodified $LastChangedDate: 2013-08-01 19:18:15 +0200 (Do, 01 Aug 2013) $
+# @filesource $URL: localhost/svn/layout/rsyslayout_bootstrap/trunk/Resources/Private/Layouts/Page.html $
+--></f:comment>
+
+<f:layout name="Page"/>
+
+<f:comment> <!--
+============================================
+ Page Resources
+============================================
+--></f:comment>
+
+<v:page.header>
+    <f:render section="Resources" optional="TRUE" arguments="{_all}"/>
+</v:page.header>
+
+<f:comment> <!--
+============================================
+ Navigation
+============================================
+--></f:comment>
+
+<f:render section="Navigation" partial="Navigation" arguments="{_all}"/>
+
+
+<f:comment> <!--
+<f:render section="SubNavigation" partial="SubNavigation"  optional="TRUE" arguments="{_all}" />
+<f:render section="TabNavigation" partial="TabNavigation"  optional="TRUE" arguments="{_all}" />
+--></f:comment>
+
+<f:comment> <!--
+============================================
+ Header
+============================================
+--></f:comment>
+
+
+<f:render section="Header" partial="Header" optional="TRUE" arguments="{_all}"/>
+
+<f:comment> <!--
+============================================
+ Container
+============================================
+--></f:comment>
+
+
+<domainexample class="container{f:if(condition: settings.hideHeader, then: ' hidden_header')}">
+
+    <f:comment> <!--
+    ============================================
+     LanguageMenu
+    ============================================
+    --></f:comment>
+
+    <f:render section="LanguageMenu" partial="LanguageMenu" optional="TRUE" arguments="{_all}"/>
+
+    <f:comment> <!--
+    ============================================
+     Hero
+    ============================================
+    --></f:comment>
+
+    <f:render section="HeroUnit" partial="HeroUnit" optional="TRUE" arguments="{_all}"/>
+
+    <f:comment> <!--
+    ============================================
+     Breadcrumb
+    ============================================
+    --></f:comment>
+
+    <f:render section="Breadcrumb" partial="Breadcrumb" optional="TRUE" arguments="{_all}"/>
+
+
+    <f:comment> <!--
+    ============================================
+     Content
+    ============================================
+    --></f:comment>
+
+    <!--TYPO3SEARCH_begin-->
+    <f:render section="Content"/>
+    <!--TYPO3SEARCH_end-->
+
+    <f:comment> <!--
+    ============================================
+     Footer
+    ============================================
+    --></f:comment>
+
+    <f:render section="Footer" partial="Foodomainexample"/>
+
+</div>

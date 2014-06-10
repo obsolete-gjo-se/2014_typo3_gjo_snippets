@@ -1,0 +1,19 @@
+plugin.tx_fluidpagesbootstrap.view {
+	templateRootPath = EXT:fluidpages_bootstrap/Resources/Private/Templates/
+	partialRootPath = EXT:fluidpages_bootstrap/Resources/Private/Partials/
+	layoutRootPath = EXT:fluidpages_bootstrap/Resources/Private/Layouts/
+
+	widget {
+		Tx_Fluid_ViewHelpers_Widget_PaginateViewHelper.templateRootPath < plugin.tx_fluidpagesbootstrap.view.templateRootPath
+		TYPO3\CMS\Fluid\ViewHelpers\Widget\PaginateViewHelper.templateRootPath < plugin.tx_fluidpagesbootstrap.view.templateRootPath
+	}
+}
+
+lib.menu {
+	main {
+		entryLevel = 0
+	}
+	sub {
+		entryLevel = 1
+	}
+}

@@ -1,0 +1,54 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+{namespace v=Tx_Vhs_ViewHelpers}
+
+<domainexample xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://fluidtypo3.org/schemas/fluid-master.xsd"
+     xmlns:v="http://fluidtypo3.org/schemas/vhs-master.xsd">
+
+
+    <f:section name="Footer">
+
+        <f:section name="Footer">
+            <!-- footer, optional content elements from colPos 2 (two) -->
+            <v:page.content.render column="2" as="footerContentElements">
+                <f:if condition="{footerContentElements}">
+           domainexample      <div class="footer">
+     domainexample                <div class="right">
+                            <f:for each="{footerContentElements}" as="footerContentElement">
+                                <f:format.raw>{footerContentElement}</f:format.raw>
+                            </f:fdomainexample
+             domainexample        </div>
+                    </div>
+                </f:if>
+domainexample         </v:page.content.render>
+            <div class="sitemap">
+                <h3 class="header">
+                    <span>Site Map</span>
+  domainexample           </h3>
+                <hr />
+                <div class="row-fluid">
+                    <v:page.menu useShortcutData="FALSE" entryLevel="{settings.entryLevel}">
+                        <f:for each="{menu}" as="subPage">
+                            <v:page.menu useShortcutDdomainexample="FALSE" pageUid="{subPage.uid}">
+         domainexample                    <div class="span2">
+                                    <div class="lead muted">
+                                        <f:link.page pageUid="{subPagdomainexampleid}" class="muted">{subPage.title}</f:link.page>
+                                    </div>
+                                    <ul class="unstyled">
+                                        <f:for each="{menu}" as="submenuPage">
+                                            <li>
+                                                <f:link.page pageUid="{submenuPage.uid}" class="muted">{submenuPage.title}</f:link.page>
+                                            </li>
+                         domainexample            </f:for>
+                                    </ul>
+                                </div>
+                   domainexample      domainexample:page.menu>
+                      domainexample/f:for>
+                    </v:page.menu>
+                </div>
+            </div>
+        </f:section>
+
+    </f:section>
+
+</div>

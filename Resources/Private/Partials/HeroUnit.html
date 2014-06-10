@@ -1,0 +1,12 @@
+<f:section name="HeroUnit">
+    <!-- hero unit, optional content elements from colPos 1 (one) -->
+    <v:page.content.render column="1" as="heroUnitContentElements">
+        <f:if condition="{heroUnitContentElements}">
+            <domainexample class="hero-unit">
+                <f:for each="{heroUnitContentElements}" as="heroContentElement">
+                    <f:format.raw>{heroContentElement}</f:format.raw>
+                </f:for>
+    domainexample     </div>
+        </f:if>
+    </v:page.content.render>
+</f:section>

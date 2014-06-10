@@ -1,0 +1,91 @@
+<html
+        xmlns="http://www.w3.org/1999/xhtml" lang="en"
+        xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+        xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+        xmlns:flux="http://fedext.net/ns/flux/ViewHelpers" >
+
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=Tx_Flux_ViewHelpers}
+
+<!--
+#
+# Rootsystem SVN
+# Page with all columns
+#
+# @version $Revision: 160 $
+# @lastrevision $Date: 2013-08-01 19:18:15 +0200 (Do, 01 Aug 2013) $
+# @modifiedby $LastChangedBy: erwin $
+# @lastmodified $LastChangedDate: 2013-08-01 19:18:15 +0200 (Do, 01 Aug 2013) $
+# @filesource $URL: localhost/svn/layout/rsyslayout_bootstrap/trunk/Resources/Private/Templates/Page/2Col.html $
+ -->
+
+
+<f:layout name="Page"/>
+
+<f:comment> <!--
+============================================
+ Page Properties
+============================================
+--></f:comment>
+
+<f:section name="Configuration">
+
+    <flux:flexform id="page-developer" label="Page 2Col:<br>* 2 Spalten<br>* Seiten Navigation" description="" icon="{f:uri.resource(path: 'Backend/Images/2Col.jpg')}">
+
+        <flux:flexform.field.checkbox name="settings.hideHeader" label="Do not show header" />
+
+        <flux:flexform.grid>
+
+            <flux:flexform.grid.row>
+                <flux:flexform.grid.column colPos="20" colspan="12" name="Hero"/>
+            </flux:flexform.grid.row>
+
+            <flux:flexform.grid.row>
+                <flux:flexform.grid.column colPos="1" colspan="3" name="Column 1"/>
+                <flux:flexform.grid.column colPos="0" colspan="9" name="Main Content"/>
+            </flux:flexform.grid.row>
+
+            <flux:flexform.grid.row>
+                <flux:flexform.grid.column colPos="10" colspan="12" name="Footer Content"/>
+            </flux:flexform.grid.row>
+
+        </flux:flexform.grid>
+    </flux:flexform>
+</f:section>
+
+
+<f:comment> <!--
+============================================
+ Page Resources
+============================================
+--></f:comment>
+
+<f:section name="Resources">
+    <f:render partial="SharedResources" section="SharedResources"/>
+</f:section>
+
+
+<f:comment> <!--
+============================================
+ Content
+============================================
+--></f:comment>
+
+<f:section name="Content">
+
+    <domainexample class="row-fluid">
+
+        <aside class="span3" role="complementary">
+   domainexample      <div class="dedomainexampleeader">Column 1</div>
+            <f:render section="SideNavigation" partial="SideNavigation"  optional="TRUE" arguments="{_all}" />
+            <v:page.content.render column="1"domainexample        </aside>
+
+        <div domainexampless="span9" role="maidomainexample
+            <div class="dev_header">Column 0</divdomainexampldomainexample         <v:page.content.render column="0"/>
+        </div>
+
+    </div>
+
+</f:section>
+
+</html>
